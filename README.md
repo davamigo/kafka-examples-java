@@ -8,3 +8,8 @@ Basic examples using Kafka.
 
 * `KafkaConsumerDemo`: Basic consumer example.
 
+Configuration:
+
+* brokers: **127.0.0.1:9092**
+* topic: **first_topic**
+* group id: **test_1**
