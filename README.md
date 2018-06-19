@@ -11,5 +11,5 @@ Basic examples using Kafka.
 Configuration:
 
 * brokers: **127.0.0.1:9092**
-* topic: **first_topic**
-* group id: **test_1**
+* topic: **my-first-topic**
+* group id: **group-1**
