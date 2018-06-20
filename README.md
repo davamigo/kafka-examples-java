@@ -18,6 +18,8 @@ Configuration:
 
 #### Create docker container with Zookeeper + Kafka.
 
+Script: [`kafka-docker/start.sh`](kafka-docker/start.sh)
+
 ```
 $ docker run --rm -d \
     -p 9092:9092 \
@@ -29,14 +31,18 @@ $ docker run --rm -d \
 
 #### Enter in a bash session in the docker container.
 
+Script: [`kafka-docker/bash.sh`](kafka-docker/bash.sh)
+
 ```
-docker exec -it docker_kafka_dev bash
+$ docker exec -it docker_kafka_dev bash
 ```
 
 #### Create "my-tirst-topic" topic with 7 partitions.
 
+Script: [`kafka-docker/create-topic.sh`](kafka-docker/create-topic.sh)
+
 ```
-bin/kafka-topics.sh --create \
+$ bin/kafka-topics.sh --create \
     --topic my-first-topic \
     --partitions 7 \
     --replication-factor 1 \
@@ -45,39 +51,52 @@ bin/kafka-topics.sh --create \
 
 #### List all the topics:
 
+Script: [`kafka-docker/list-topics.sh`](kafka-docker/list-topics.sh)
+
 ```
-bin/kafka-topics.sh --list \
+$ bin/kafka-topics.sh --list \
     --zookeeper localhost:2181
 ```
 
 #### Run producer.
 
+Script: [`kafka-docker/console-producer.sh`](kafka-docker/console-producer.sh)
+
 ```
-bin/kafka-console-producer.sh \
+$ bin/kafka-console-producer.sh \
     --topic my-first-topic \
     --broker-list localhost:9092
-
-hello
-world
-privalia
-privalia-tech
-engineering-culture
+1,hello
+2,world
+3,privalia
+4,privalia-tech
+5,engineering-culture
 <Ctrl + C>
 ```
 
 #### Run the consumer.
 
+Script: [kafka-docker/console-consumer.sh](kafka-docker/console-consumer.sh)
+
+
 ```
-bin/kafka-console-consumer.sh \
+$ bin/kafka-console-consumer.sh \
     --topic my-first-topic \
     --bootstrap-server localhost:9092 \
     --from-beginning
-
+3,privalia
+4,privalia-tech
+5,engineering culture
+1,hello
+2,world
 <Ctrl+C>
 ```
 
 #### Stop the container.
 
+Script: [kafka-docker/stop.sh](kafka-docker/stop.sh)
+
+
 ```
-docker stop docker_kafka_dev
+$ docker stop docker_kafka_dev
 ```

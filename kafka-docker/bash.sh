@@ -1,5 +1,11 @@
 #!/bin/bash
 
-docker exec -it \
+COMMAND="docker exec -it \
     docker_kafka_dev \
-    bash
+    bash";
+
+echo -en "\n$ ";
+echo -e $COMMAND;
+
+$COMMAND
+echo -e "";
