@@ -76,7 +76,7 @@ $ bin/kafka-console-producer.sh \
 
 #### Run the consumer.
 
-Script: [kafka-docker/console-consumer.sh](kafka-docker/console-consumer.sh)
+Script: [`kafka-docker/console-consumer.sh`](kafka-docker/console-consumer.sh)
 
 
 ```
@@ -94,7 +94,7 @@ $ bin/kafka-console-consumer.sh \
 
 #### Stop the container.
 
-Script: [kafka-docker/stop.sh](kafka-docker/stop.sh)
+Script: [`kafka-docker/stop.sh`](kafka-docker/stop.sh)
 
 
 ```
